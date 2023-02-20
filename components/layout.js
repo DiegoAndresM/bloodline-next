@@ -11,7 +11,7 @@ const Layout = (props) => {
             
         </Head>
         <Navbar/>
-        <Sidenav/>
+        
         
         
         <div className='container mx-auto'>
