@@ -16,7 +16,7 @@ export default function logoutHandler(req, res){
         const serialCookie = serialize('authCookie', null, {
 
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', 
+            secure: process.env.NODE_ENV === 'production', //Needs a ssl certificate to work, but NODE_ENV checks if we are in production or not.
             sameSite: 'strict',
             maxAge: 0,
             path: '/'

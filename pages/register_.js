@@ -105,7 +105,7 @@ export default function Login(){
             </div>
           </div>
         </div>
-           
+            {/*Esta seccion son los botones de remember me, el link para registrar un nuevo usuario*/}
           </form>
        
     </>
