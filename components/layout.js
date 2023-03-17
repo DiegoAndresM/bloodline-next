@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Navbar from './navbar'
-import Sidenav from './sidenav'
+
 
 const Layout = (props) => {
   return (
@@ -14,7 +14,7 @@ const Layout = (props) => {
         
         
         
-        <div className='container mx-auto'>
+        <div>
             {props.children}
         </div>
     </div>

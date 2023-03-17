@@ -14,10 +14,10 @@ const  Navbar = () => {
                   <path clipRule="evenodd" fillRule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z" />
                 </svg>
               </button>
-              <a href="https://flowbite.com" className="flex ml-2 md:mr-24">
+              <Link href="/homepage" className="flex ml-2 md:mr-24">
                 <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 mr-3" alt="FlowBite Logo" />
-                <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Flowbite</span>
-              </a>
+                <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Bloodline</span>
+              </Link>
             </div>
             <div className="flex items-center">
               <div className="flex items-center ml-3">
@@ -61,7 +61,7 @@ const  Navbar = () => {
         <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
           <ul className="space-y-2">
             <li>
-              <Link href="/mapa" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+              <Link href="/mapatry" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                 <svg aria-hidden="true" className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
                 <span className="flex-1 ml-3 whitespace-nowrap">mapa</span>
               </Link>
@@ -77,92 +77,7 @@ const  Navbar = () => {
         </div>
       </aside>
       
-      <div className="p-4 sm:ml-28">
-        <div className="flex p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-          <div className="flex mb-4  flex-col basis-2/3 bg-base-100 gap-4">
-
-            <div className="flex w-full shadow-xl">
-                <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPUUQDPJSUoiDVHqHStGIgXqT0fvOC_5IXqQ&usqp=CAU" alt="Movie"/></figure>
-                <div className="card-body">
-                  <h2 className="card-title">New movie is released!</h2>
-                  <p>Click the button to watch on Jetflix app.</p>
-                  <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Watch</button>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex  shadow-xl">
-                <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPUUQDPJSUoiDVHqHStGIgXqT0fvOC_5IXqQ&usqp=CAU" alt="Movie"/></figure>
-                <div className="card-body">
-                  <h2 className="card-title">New movie is released!</h2>
-                  <p>Click the button to watch on Jetflix app.</p>
-                  <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Watch</button>
-              </div>
-            </div>
-          </div> 
-
-          <div className="flex w-full shadow-xl">
-                <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPUUQDPJSUoiDVHqHStGIgXqT0fvOC_5IXqQ&usqp=CAU" alt="Movie"/></figure>
-                <div className="card-body">
-                  <h2 className="card-title">New movie is released!</h2>
-                  <p>Click the button to watch on Jetflix app.</p>
-                  <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Watch</button>
-                  </div>
-                </div>
-              </div> 
-
-          </div>
-
-          <div className="flex basis-1/3 justify-items-end justify-center w-60 mb-auto bg-base-100">
-          <div className="items-right justify-items-end justify-center rounded shadow-xl h-auto w-11/12">
-              <div className="card flex-shrink-0 justify-items-center w-full max-w  bg-base-100">
-                <div className="card-body">
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text ">Email</span>
-                    </label>
-                    <input type="text" placeholder="email" className="input input-bordered" />
-                  </div>
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text">Email</span>
-                    </label>
-                    <input type="text" placeholder="email" className="input input-bordered" />
-                  </div>
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text">Email</span>
-                    </label>
-                    <input type="text" placeholder="email" className="input input-bordered" />
-                  </div>
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text">Password</span>
-                    </label>
-                    <input type="text" placeholder="password" className="input input-bordered" />
-                    <label className="label">
-                      <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                    </label>
-                  </div>
-                  <div className="form-control mt-6">
-                    <button className="btn btn-primary">Login</button>
-                  </div>
-                </div>
-              </div>
-
-
-          </div>
-          </div>
-
-          
-          
-         
-          
-        </div>
-      </div>
+     
       </div>
     )
 }
