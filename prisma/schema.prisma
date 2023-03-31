@@ -52,4 +52,28 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+
+  
+}
+
+model Request {
+  id              int       @id @default(autoincrement())
+	paciente_name   string
+	hospital_name   string
+	blood_type      string
+	phone varchar   string
+	description     string
+	created_at      string
+	active          tinyint
+}
+
+model Direct_Users {
+  id            int         @id @default(autoincrement())
+	username      string
+	email         string
+	password      string
+	active        string
+	created_at    datetime
+	updated_at    datetime
+
 }

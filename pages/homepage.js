@@ -1,11 +1,13 @@
 
 import Head from 'next/head';
 import Layout from '../components/layout'
+import Request from '../components/cards-req'
+import prisma from '../lib/prismadb';
 
 
 
 
-const homepage = () => {
+export default function homepage () {
     return (
 
         <Layout>
@@ -13,19 +15,9 @@ const homepage = () => {
                 <div className="flex p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
 
                     <div className="flex mb-4  flex-col basis-2/3 bg-base-100 gap-4">
-
-                        <div className="flex w-full shadow-xl">
-                            <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPUUQDPJSUoiDVHqHStGIgXqT0fvOC_5IXqQ&usqp=CAU" alt="Movie" /></figure>
-                            <div className="card-body">
-                                <h2 className="card-title">Nombre del paciente</h2>
-                                <p>Hospital en el que se encuentra</p>
-                                <p>Nivel de urgencia</p>
-                                <p>Telefono de contacto</p>
-                                <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Contactar</button>
-                                </div>
-                            </div>
-                        </div>
+                        {request.map((request) => (
+                            <Request request={request} key={request.id} />
+                        ))}
 
                         <div className="flex w-full shadow-xl">
                             <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPUUQDPJSUoiDVHqHStGIgXqT0fvOC_5IXqQ&usqp=CAU" alt="Movie" /></figure>
@@ -57,7 +49,7 @@ const homepage = () => {
                         <div className="items-right justify-items-end justify-center rounded shadow-xl h-auto w-11/12">
 
                             <form action="/api/create_req" method='post'>
-                            <input type="hidden" name="remember" defaultValue="true" />
+                                <input type="hidden" name="remember" defaultValue="true" />
 
                                 <div className="card flex-shrink-0 justify-items-center w-full max-w  bg-base-100">
                                     <div className="card-body">
@@ -114,4 +106,21 @@ const homepage = () => {
     )
 }
 
-export default homepage;
+export async function getStaticProps(context) {
+    const data = await prisma.request.findMany({
+        select: {
+            paciente_name: true,
+            hospital_name: true,
+            blood_type: true,
+            phone: true,
+            description: true,
+          },
+    });
+  
+    //convert decimal value to string to pass through as json
+    const requests = data.map((request) => ({}));
+    return {
+      props: { requests },
+    };
+  }
+  
