@@ -2,12 +2,14 @@
 import Head from 'next/head';
 import Layout from '../components/layout'
 import Request from '../components/cards-req'
-import prisma from '../lib/prismadb';
+import prisma from '../lib/prisma';
 
 
 
 
-export default function homepage () {
+
+
+export default function homepage ({request}) {
     return (
 
         <Layout>
@@ -103,7 +105,7 @@ export default function homepage () {
 
         </Layout>
 
-    )
+    );
 }
 
 export async function getStaticProps(context) {
@@ -118,8 +120,11 @@ export async function getStaticProps(context) {
     });
   
     //convert decimal value to string to pass through as json
-    const requests = data.map((request) => ({}));
+    const requests = data.map((request) => ({
+        ...request,
+    }));
     return {
+        
       props: { requests },
     };
   }
